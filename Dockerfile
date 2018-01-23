@@ -16,8 +16,7 @@ RUN apt-get -m update && apt-get install -y wget unzip openjdk-7-jre zip
 RUN wget -q http://downloads.sourceforge.net/project/bamstats/BAMStats-1.25.zip
 RUN unzip BAMStats-1.25.zip && \
     rm BAMStats-1.25.zip && \
-    mv BAMStats-1.25 /opt/
-COPY bin/bamstats /usr/local/bin/
+    mv BAMStats-1.25 /usr/local/bin/bamstats
 RUN chmod a+x /usr/local/bin/bamstats
 
 # switch back to the ubuntu user so this tool (and the files written) are not owned by root
